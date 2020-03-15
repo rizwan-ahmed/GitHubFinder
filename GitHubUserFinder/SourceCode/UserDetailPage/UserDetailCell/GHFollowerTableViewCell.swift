@@ -34,7 +34,7 @@ class GHFollowerTableViewCell: UITableViewCell {
             }
         }
         viewModel?.fetchImage()
-        indexLabel.text = "\(index)"
+        indexLabel.text = "\(index + 1)"
         nameLabel.text = viewModel?.userName
         emailLabel.text = viewModel?.userEmail
         
