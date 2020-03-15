@@ -21,6 +21,9 @@
 		B5B29B51241D556E00FC94C7 /* GHFollowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B50241D556E00FC94C7 /* GHFollowerModel.swift */; };
 		B5B29B54241DF7BE00FC94C7 /* GHUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B53241DF7BE00FC94C7 /* GHUserService.swift */; };
 		B5B29B59241E40A400FC94C7 /* GHSearchUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B58241E40A400FC94C7 /* GHSearchUserViewModel.swift */; };
+		B5B29B5B241E908700FC94C7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B5A241E908700FC94C7 /* Constant.swift */; };
+		B5B29B5E241E91DC00FC94C7 /* GHUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B5D241E91DB00FC94C7 /* GHUserDetailViewController.swift */; };
+		B5B29B60241E920F00FC94C7 /* GHUserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B5F241E920F00FC94C7 /* GHUserDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		B5B29B50241D556E00FC94C7 /* GHFollowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowerModel.swift; sourceTree = "<group>"; };
 		B5B29B53241DF7BE00FC94C7 /* GHUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserService.swift; sourceTree = "<group>"; };
 		B5B29B58241E40A400FC94C7 /* GHSearchUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHSearchUserViewModel.swift; sourceTree = "<group>"; };
+		B5B29B5A241E908700FC94C7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		B5B29B5D241E91DB00FC94C7 /* GHUserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserDetailViewController.swift; sourceTree = "<group>"; };
+		B5B29B5F241E920F00FC94C7 /* GHUserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,7 @@
 		B5B29B48241CF06000FC94C7 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				B5B29B5A241E908700FC94C7 /* Constant.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 		B5B29B4C241D0CE000FC94C7 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				B5B29B5C241E91BE00FC94C7 /* UserDetailPage */,
 				B5B29B57241E406F00FC94C7 /* SearchUser */,
 				B5B29B4D241D0CF000FC94C7 /* Model */,
 			);
@@ -200,6 +208,15 @@
 				B5B29B58241E40A400FC94C7 /* GHSearchUserViewModel.swift */,
 			);
 			path = SearchUser;
+			sourceTree = "<group>";
+		};
+		B5B29B5C241E91BE00FC94C7 /* UserDetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				B5B29B5D241E91DB00FC94C7 /* GHUserDetailViewController.swift */,
+				B5B29B5F241E920F00FC94C7 /* GHUserDetailViewModel.swift */,
+			);
+			path = UserDetailPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,14 +351,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B29B51241D556E00FC94C7 /* GHFollowerModel.swift in Sources */,
+				B5B29B5E241E91DC00FC94C7 /* GHUserDetailViewController.swift in Sources */,
 				B5B29B54241DF7BE00FC94C7 /* GHUserService.swift in Sources */,
 				B5B29B1A241CC86700FC94C7 /* GHSearchUserViewController.swift in Sources */,
 				B5B29B16241CC86700FC94C7 /* AppDelegate.swift in Sources */,
 				B5B29B18241CC86700FC94C7 /* SceneDelegate.swift in Sources */,
 				B5B29B59241E40A400FC94C7 /* GHSearchUserViewModel.swift in Sources */,
 				B5B29B4F241D0D0D00FC94C7 /* GHUserModel.swift in Sources */,
+				B5B29B5B241E908700FC94C7 /* Constant.swift in Sources */,
 				B5B29B47241CDB4900FC94C7 /* NetworkHandler.swift in Sources */,
 				B5B29B4B241CF08700FC94C7 /* APIConfig.swift in Sources */,
+				B5B29B60241E920F00FC94C7 /* GHUserDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

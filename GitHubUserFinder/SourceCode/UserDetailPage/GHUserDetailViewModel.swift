@@ -1,5 +1,5 @@
 //
-//  GHSearchUserViewModel.swift
+//  UserDetailViewModel.swift
 //  GitHubUserFinder
 //
 //  Created by Rizwan Ahmed on 15/03/2020.
@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class GHSearchUserViewModel {
+class GHUserDetailViewModel {
     var userId :String  = ""
     var userModel   :GHUserModel?
     var userService     = GHUserService.init(NetworkHandler())
@@ -15,8 +15,8 @@ class GHSearchUserViewModel {
     var dataFetchFailed : ((String)->())?
 }
 
-extension GHSearchUserViewModel {
-    func fetchUsrer() {
+extension GHUserDetailViewModel {
+    func fetchFollowers() {
         userService.fetchUser(userId) {[weak self] (user, error) in
             if let error = error {
                 self?.dataFetchFailed?(error)

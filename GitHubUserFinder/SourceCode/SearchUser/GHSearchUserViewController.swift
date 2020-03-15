@@ -10,7 +10,7 @@ import UIKit
 //import NetworkLayer
 class GHSearchUserViewController: UIViewController {
     
-    @IBOutlet weak var imageView: UIImageView!
+
     @IBOutlet weak var searchBar: UISearchBar!
     
     var viewModel = GHSearchUserViewModel()
@@ -25,7 +25,7 @@ class GHSearchUserViewController: UIViewController {
         
         viewModel.dataFetch = { [weak self] (user) in
             DispatchQueue.main.async { [weak self] in
-                self?.showAlertView(title: "User Found", message: user.name ?? "")
+                self?.performSegue(withIdentifier: Segues.homeToDetailPage, sender: self)
             }
         }
         
@@ -34,7 +34,7 @@ class GHSearchUserViewController: UIViewController {
                 self?.showAlertView(title: "Error", message: error)
             }
         }
-    }
+    }                            
 }
 
 extension GHSearchUserViewController: UISearchBarDelegate {
@@ -54,3 +54,14 @@ extension GHSearchUserViewController {
     }
 }
 
+extension GHSearchUserViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == Segues.homeToDetailPage {
+            if let destinationVC = segue.destination as? GHUserDetailViewController {
+                destinationVC.viewModel.userModel = viewModel.userModel
+            }
+        }
+        
+    }
+}
