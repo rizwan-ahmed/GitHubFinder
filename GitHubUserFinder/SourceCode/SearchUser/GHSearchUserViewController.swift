@@ -8,17 +8,23 @@
 
 import UIKit
 
-class SearchUserViewController: UIViewController {
-
+class GHSearchUserViewController: UIViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    var viewModel = GHSearchUserViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+                    
 }
 
-extension SearchUserViewController: UISearchBarDelegate {
+extension GHSearchUserViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("Test: \(searchBar.text)")
+        viewModel.userId = searchBar.text ?? ""
+        viewModel.fetchUsrer()
     }
 }
