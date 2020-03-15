@@ -15,6 +15,7 @@ struct GHUserModel: Codable {
     let url, followersURL   : String?
     let name, email         : String?
     let followers           : Int?
+    let publicRepos         : Int?
     
     enum CodingKeys: String, CodingKey {
         case login
@@ -22,5 +23,6 @@ struct GHUserModel: Codable {
         case url
         case followersURL = "followers_url"
         case name, email, followers
+        case publicRepos = "public_repos"
     }
 }

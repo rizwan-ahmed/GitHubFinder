@@ -12,16 +12,19 @@ class GHUserDetailViewModel {
     
     var userName        = ""
     var userEmail       = ""
-    var userFollowers   = ""
+    var publicRepos   = ""
     
     
     var userId :String  = ""
-    var userModel   :GHUserModel?
-    var userService     = GHUserService.init(NetworkHandler())
-    var imageService    = GHImageService.init(NetworkHandler())
-    var imageFetch      : ((UIImage?)->())?
-    var dataFetch       : ((GHUserModel)->())?
-    var dataFetchFailed : ((String)->())?
+    var userService             = GHUserService.init(NetworkHandler())
+    var imageService            = GHImageService.init(NetworkHandler())
+    
+    private var followerList    = [GHFollowerModel]()
+    
+    var userModel               :GHUserModel?
+    var imageFetch              : ((UIImage?)->())?
+    var followersFetch          : (([GHFollowerModel])->())?
+    var dataFetchFailed         : ((String)->())?
 }
 
 extension GHUserDetailViewModel {
@@ -29,11 +32,24 @@ extension GHUserDetailViewModel {
         userId = userModel?.login ?? ""
         userName        = "Name: \(userModel?.name ?? "")"
         userEmail       = "Email: \(userModel?.email ?? "")"
-        userFollowers   = "No. of Followers: \(userModel?.followers ?? 0)"
+        publicRepos   = "Public repos: \(userModel?.publicRepos ?? 0)"
         fetchUsrerImge()
+        if let followersCount = userModel?.followers, followersCount > 0 {
+            fetchFollowers()
+        }
     }
     
+    func getNumberOfRows() -> Int {
+        return followerList.count
+    }
     
+    func getFollower(atIndex index: Int) -> GHFollowerModel? {
+        guard index >= 0 && index < followerList.count else { return nil }
+        return followerList[index]
+    }
+}
+
+extension GHUserDetailViewModel {
     func fetchUsrerImge() {
         guard let iamgePath = userModel?.avatarURL else { return }
         imageService.fetchImage(iamgePath) { [weak self] (image, error) in
@@ -41,5 +57,16 @@ extension GHUserDetailViewModel {
         }
     }
     
-    
+    func fetchFollowers() {
+        userService.fetchFollowers(userId) { [weak self] (followers, error) in
+            if let error = error {
+                self?.dataFetchFailed?(error)
+            } else if let followers = followers{
+                self?.followerList = followers
+                self?.followersFetch?(followers)
+            } else {
+                self?.dataFetchFailed?("Unable to load data")
+            }            
+        }
+    }
 }

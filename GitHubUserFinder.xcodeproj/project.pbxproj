@@ -25,6 +25,8 @@
 		B5B29B5B241E908700FC94C7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B5A241E908700FC94C7 /* Constant.swift */; };
 		B5B29B5E241E91DC00FC94C7 /* GHUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B5D241E91DB00FC94C7 /* GHUserDetailViewController.swift */; };
 		B5B29B60241E920F00FC94C7 /* GHUserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B5F241E920F00FC94C7 /* GHUserDetailViewModel.swift */; };
+		B5B29B62241EB28F00FC94C7 /* GHFollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B61241EB28F00FC94C7 /* GHFollowerTableViewCell.swift */; };
+		B5B29B65241EB6F900FC94C7 /* GHFollowerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B64241EB6F900FC94C7 /* GHFollowerCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		B5B29B5A241E908700FC94C7 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B5B29B5D241E91DB00FC94C7 /* GHUserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserDetailViewController.swift; sourceTree = "<group>"; };
 		B5B29B5F241E920F00FC94C7 /* GHUserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserDetailViewModel.swift; sourceTree = "<group>"; };
+		B5B29B61241EB28F00FC94C7 /* GHFollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowerTableViewCell.swift; sourceTree = "<group>"; };
+		B5B29B64241EB6F900FC94C7 /* GHFollowerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowerCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,10 +220,20 @@
 		B5B29B5C241E91BE00FC94C7 /* UserDetailPage */ = {
 			isa = PBXGroup;
 			children = (
-				B5B29B5D241E91DB00FC94C7 /* GHUserDetailViewController.swift */,
 				B5B29B5F241E920F00FC94C7 /* GHUserDetailViewModel.swift */,
+				B5B29B5D241E91DB00FC94C7 /* GHUserDetailViewController.swift */,
+				B5B29B63241EB6C600FC94C7 /* UserDetailCell */,
 			);
 			path = UserDetailPage;
+			sourceTree = "<group>";
+		};
+		B5B29B63241EB6C600FC94C7 /* UserDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				B5B29B61241EB28F00FC94C7 /* GHFollowerTableViewCell.swift */,
+				B5B29B64241EB6F900FC94C7 /* GHFollowerCellViewModel.swift */,
+			);
+			path = UserDetailCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +371,8 @@
 				B5B29B51241D556E00FC94C7 /* GHFollowerModel.swift in Sources */,
 				B5B29B5E241E91DC00FC94C7 /* GHUserDetailViewController.swift in Sources */,
 				B5B29B54241DF7BE00FC94C7 /* GHUserService.swift in Sources */,
+				B5B29B65241EB6F900FC94C7 /* GHFollowerCellViewModel.swift in Sources */,
+				B5B29B62241EB28F00FC94C7 /* GHFollowerTableViewCell.swift in Sources */,
 				B5B29B1A241CC86700FC94C7 /* GHSearchUserViewController.swift in Sources */,
 				B5B29B16241CC86700FC94C7 /* AppDelegate.swift in Sources */,
 				B5B29B18241CC86700FC94C7 /* SceneDelegate.swift in Sources */,

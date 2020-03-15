@@ -12,3 +12,7 @@ import Foundation
 enum Segues {
     static let homeToDetailPage = "homeToDetailPage"
 }
+
+enum CellIdentifiers {
+    static let followerCellIdentifier = "FollowerCellIdentifier"
+}

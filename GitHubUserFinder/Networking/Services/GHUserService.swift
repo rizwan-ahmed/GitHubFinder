@@ -36,7 +36,7 @@ extension GHUserService {
     func fetchFollowers(_ userId: String, completion: @escaping FollowersFetchedBlock) {
         let urlString = APIConfig.followers(userName: userId).path
         let successHandler: ([GHFollowerModel]) -> Void = { (followers) in
-            print("*****  1  USER data : \(followers)")
+            print("*****  2  followers data : \(followers)")
             completion(followers, nil)
         }
         let errorHandler: (String) -> Void = { (error) in
