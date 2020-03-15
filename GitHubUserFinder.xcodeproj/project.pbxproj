@@ -184,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				B5B29B5C241E91BE00FC94C7 /* UserDetailPage */,
-				B5B29B57241E406F00FC94C7 /* SearchUser */,
+				B5B29B57241E406F00FC94C7 /* SearchUserPage */,
 				B5B29B4D241D0CF000FC94C7 /* Model */,
 			);
 			path = SourceCode;
@@ -208,13 +208,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		B5B29B57241E406F00FC94C7 /* SearchUser */ = {
+		B5B29B57241E406F00FC94C7 /* SearchUserPage */ = {
 			isa = PBXGroup;
 			children = (
 				B5B29B19241CC86700FC94C7 /* GHSearchUserViewController.swift */,
 				B5B29B58241E40A400FC94C7 /* GHSearchUserViewModel.swift */,
 			);
-			path = SearchUser;
+			path = SearchUserPage;
 			sourceTree = "<group>";
 		};
 		B5B29B5C241E91BE00FC94C7 /* UserDetailPage */ = {
