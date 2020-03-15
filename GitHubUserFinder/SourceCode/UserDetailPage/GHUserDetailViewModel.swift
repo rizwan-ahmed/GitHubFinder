@@ -7,34 +7,39 @@
 //
 
 import Foundation
+import UIKit
 class GHUserDetailViewModel {
     
     var userName        = ""
     var userEmail       = ""
     var userFollowers   = ""
     
+    
     var userId :String  = ""
     var userModel   :GHUserModel?
     var userService     = GHUserService.init(NetworkHandler())
+    var imageService    = GHImageService.init(NetworkHandler())
+    var imageFetch      : ((UIImage?)->())?
     var dataFetch       : ((GHUserModel)->())?
     var dataFetchFailed : ((String)->())?
 }
 
 extension GHUserDetailViewModel {
-    func setUpUser() {        
+    func setUpUser() {
+        userId = userModel?.login ?? ""
         userName        = "Name: \(userModel?.name ?? "")"
         userEmail       = "Email: \(userModel?.email ?? "")"
         userFollowers   = "No. of Followers: \(userModel?.followers ?? 0)"
+        fetchUsrerImge()
     }
-    func fetchFollowers() {
-        userService.fetchUser(userId) {[weak self] (user, error) in
-            if let error = error {
-                self?.dataFetchFailed?(error)
-            } else if let user = user{
-                self?.dataFetch?(user)
-            } else {
-                self?.dataFetchFailed?("Unable to load data")
-            }            
+    
+    
+    func fetchUsrerImge() {
+        guard let iamgePath = userModel?.avatarURL else { return }
+        imageService.fetchImage(iamgePath) { [weak self] (image, error) in
+            self?.imageFetch?(image)
         }
     }
+    
+    
 }

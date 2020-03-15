@@ -9,7 +9,7 @@
 import UIKit
 
 class GHUserDetailViewController: UIViewController {
-
+    
     var viewModel = GHUserDetailViewModel()
     
     @IBOutlet weak var userImageView    : UIImageView!
@@ -19,11 +19,21 @@ class GHUserDetailViewController: UIViewController {
     @IBOutlet weak var tableView        : UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-
+        super.viewDidLoad()        
         // Do any additional setup after loading the view.
-        viewModel.setUpUser()
+        setupViewModel()
         setupView()
+    }
+    
+    func setupViewModel() {
+        viewModel.setUpUser()
+        viewModel.imageFetch = { [weak self] (image) in
+            if let userImage = image {
+                DispatchQueue.main.async {
+                    self?.userImageView.image = userImage
+                }
+            }
+        }
     }
     
     func setupView(){
