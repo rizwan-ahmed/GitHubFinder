@@ -8,6 +8,11 @@
 
 import Foundation
 class GHUserDetailViewModel {
+    
+    var userName        = ""
+    var userEmail       = ""
+    var userFollowers   = ""
+    
     var userId :String  = ""
     var userModel   :GHUserModel?
     var userService     = GHUserService.init(NetworkHandler())
@@ -16,6 +21,11 @@ class GHUserDetailViewModel {
 }
 
 extension GHUserDetailViewModel {
+    func setUpUser() {        
+        userName        = "Name: \(userModel?.name ?? "")"
+        userEmail       = "Email: \(userModel?.email ?? "")"
+        userFollowers   = "No. of Followers: \(userModel?.followers ?? 0)"
+    }
     func fetchFollowers() {
         userService.fetchUser(userId) {[weak self] (user, error) in
             if let error = error {

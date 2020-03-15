@@ -21,6 +21,7 @@ extension GHSearchUserViewModel {
             if let error = error {
                 self?.dataFetchFailed?(error)
             } else if let user = user{
+                self?.userModel = user
                 self?.dataFetch?(user)
             } else {
                 self?.dataFetchFailed?("Unable to load data")
