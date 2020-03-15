@@ -19,6 +19,7 @@
 		B5B29B4B241CF08700FC94C7 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B4A241CF08700FC94C7 /* APIConfig.swift */; };
 		B5B29B4F241D0D0D00FC94C7 /* GHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B4E241D0D0D00FC94C7 /* GHUserModel.swift */; };
 		B5B29B51241D556E00FC94C7 /* GHFollowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B50241D556E00FC94C7 /* GHFollowerModel.swift */; };
+		B5B29B54241DF7BE00FC94C7 /* GHUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B53241DF7BE00FC94C7 /* GHUserService.swift */; };
 		B5B29B59241E40A400FC94C7 /* GHSearchUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B29B58241E40A400FC94C7 /* GHSearchUserViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		B5B29B4A241CF08700FC94C7 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		B5B29B4E241D0D0D00FC94C7 /* GHUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserModel.swift; sourceTree = "<group>"; };
 		B5B29B50241D556E00FC94C7 /* GHFollowerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHFollowerModel.swift; sourceTree = "<group>"; };
+		B5B29B53241DF7BE00FC94C7 /* GHUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserService.swift; sourceTree = "<group>"; };
 		B5B29B58241E40A400FC94C7 /* GHSearchUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHSearchUserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 		B5B29B45241CD8D500FC94C7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B5B29B52241DF14D00FC94C7 /* Services */,
 				B5B29B49241CF06B00FC94C7 /* APIConfig */,
 				B5B29B46241CDB4900FC94C7 /* NetworkHandler.swift */,
 			);
@@ -180,6 +183,14 @@
 				B5B29B50241D556E00FC94C7 /* GHFollowerModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B5B29B52241DF14D00FC94C7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5B29B53241DF7BE00FC94C7 /* GHUserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B5B29B57241E406F00FC94C7 /* SearchUser */ = {
@@ -323,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B29B51241D556E00FC94C7 /* GHFollowerModel.swift in Sources */,
+				B5B29B54241DF7BE00FC94C7 /* GHUserService.swift in Sources */,
 				B5B29B1A241CC86700FC94C7 /* GHSearchUserViewController.swift in Sources */,
 				B5B29B16241CC86700FC94C7 /* AppDelegate.swift in Sources */,
 				B5B29B18241CC86700FC94C7 /* SceneDelegate.swift in Sources */,
