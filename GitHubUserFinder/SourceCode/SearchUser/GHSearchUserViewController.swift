@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//import NetworkLayer
 class GHSearchUserViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -18,8 +18,23 @@ class GHSearchUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupViewModel()
     }
-                    
+    
+    func setupViewModel() {
+        
+        viewModel.dataFetch = { [weak self] (user) in
+            DispatchQueue.main.async { [weak self] in
+                self?.showAlertView(title: "User Found", message: user.name ?? "")
+            }
+        }
+        
+        viewModel.dataFetchFailed = { [weak self] (error) in
+            DispatchQueue.main.async { [weak self] in
+                self?.showAlertView(title: "Error", message: error)
+            }
+        }
+    }
 }
 
 extension GHSearchUserViewController: UISearchBarDelegate {
@@ -28,3 +43,14 @@ extension GHSearchUserViewController: UISearchBarDelegate {
         viewModel.fetchUsrer()
     }
 }
+
+extension GHSearchUserViewController {
+    func showAlertView(title: String,message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+

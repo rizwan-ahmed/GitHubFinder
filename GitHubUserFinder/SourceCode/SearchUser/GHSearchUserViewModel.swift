@@ -7,11 +7,25 @@
 //
 
 import Foundation
-struct GHSearchUserViewModel {
-    var userId :String  = ""    
+
+class GHSearchUserViewModel {
+    var userId :String  = ""
+    var userService     = GHUserService.init(NetworkHandler())
+    var dataFetch       : ((GHUserModel)->())?
+    var dataFetchFailed : ((String)->())?
 }
+
 
 extension GHSearchUserViewModel {
     func fetchUsrer() {
+        userService.fetchUser(userId) {[weak self] (user, error) in
+            if let error = error {
+                self?.dataFetchFailed?(error)
+            } else if let user = user{
+                self?.dataFetch?(user)
+            } else {
+                self?.dataFetchFailed?("Unable to load data")
+            }
+        }
     }
 }
