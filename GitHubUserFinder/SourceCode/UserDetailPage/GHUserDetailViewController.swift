@@ -10,6 +10,8 @@ import UIKit
 
 class GHUserDetailViewController: UIViewController {
     
+    // MARK: - Class Variables
+    
     var viewModel = GHUserDetailViewModel()
     
     @IBOutlet weak var userImageView    : UIImageView!
@@ -18,6 +20,7 @@ class GHUserDetailViewController: UIViewController {
     @IBOutlet weak var repoCountLabel   : UILabel!
     @IBOutlet weak var tableView        : UITableView!
     
+    // MARK: - ViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()        
         // Do any additional setup after loading the view.
@@ -36,9 +39,9 @@ class GHUserDetailViewController: UIViewController {
         }
         
         viewModel.followersFetch = { [weak self] (followers) in
-                DispatchQueue.main.async {
-                    self?.tableView.reloadData()
-                }
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
     }
     
@@ -49,6 +52,7 @@ class GHUserDetailViewController: UIViewController {
     }
 }
 
+// MARK: - UITableView Delegate methods
 extension GHUserDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     

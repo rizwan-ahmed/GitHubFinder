@@ -10,11 +10,13 @@ import UIKit
 //import NetworkLayer
 class GHSearchUserViewController: UIViewController {
     
-
+    // MARK: - IBOutlet
     @IBOutlet weak var searchBar: UISearchBar!
     
+    // MARK: - Class Variables
     var viewModel = GHSearchUserViewModel()
     
+    // MARK: - ViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,6 +39,7 @@ class GHSearchUserViewController: UIViewController {
     }                            
 }
 
+// MARK: - SearchBar Delegates
 extension GHSearchUserViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.userId = searchBar.text ?? ""
@@ -44,6 +47,7 @@ extension GHSearchUserViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - Show Alerts
 extension GHSearchUserViewController {
     func showAlertView(title: String,message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -54,6 +58,7 @@ extension GHSearchUserViewController {
     }
 }
 
+// MARK: - Navigations
 extension GHSearchUserViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

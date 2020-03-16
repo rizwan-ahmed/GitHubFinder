@@ -18,6 +18,8 @@ struct GHImageService {
     }
 }
 
+// MARK: - API method
+
 extension GHImageService {
     func fetchImage(_ imageURLPath: String, completion: @escaping ImageCompletionBlock) {
         let url = URL(string: APIConfig.image(path: imageURLPath).path)

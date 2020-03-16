@@ -24,8 +24,7 @@ enum APIConfig {
     }
 }
 
-extension APIConfig {
-    
+extension APIConfig {    
     var path: String {
         switch self {
         case .searchUser(let userName):

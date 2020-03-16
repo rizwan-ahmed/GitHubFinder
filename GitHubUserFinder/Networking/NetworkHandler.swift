@@ -9,6 +9,7 @@
 import Foundation
 
 
+// MARK: - NetworkEnvironment
 enum NetworkEnvironment {
     case staging
     case production
@@ -18,6 +19,7 @@ enum NetworkEnvironment {
 typealias NetworkCompletionHandler = (Data?, URLResponse?, Error?) -> Void
 typealias ErrorHandler = (String) -> Void
 
+// MARK: - NetworkResponse Enums
 enum NetworkResponse: String {
     case success
     case authenticationError    = "Authentication Error"
@@ -28,14 +30,15 @@ enum NetworkResponse: String {
     case noInternet             = "No Internet Connectivity."
 }
 
+// MARK: - NetworkHandler
 struct NetworkHandler {
-    
     static let genericError = "Something went wrong. Please try again later"
     static let userNotFoundError = "User Not found"
     static let environment: NetworkEnvironment = .production
 }
 
 
+// MARK: - API calls
 extension NetworkHandler {
     
     func fetchData(urlString: String, successHandler: @escaping (Data) -> Void,
@@ -126,6 +129,8 @@ extension NetworkHandler {
         return isUserNotFound(urlResponse.statusCode)
     }
 }
+
+// MARK: - Parsing Response code
 extension NetworkHandler {
     private func parseHTTPResponse(_ urlResponse:HTTPURLResponse) -> NetworkResponse {
         switch urlResponse.statusCode {

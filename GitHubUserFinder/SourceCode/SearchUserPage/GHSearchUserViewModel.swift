@@ -8,6 +8,7 @@
 
 import Foundation
 class GHSearchUserViewModel {
+    // MARK: - Class Variables
     var userId :String  = ""
     var userModel   :GHUserModel?
     var userService     = GHUserService.init(NetworkHandler())
@@ -15,6 +16,7 @@ class GHSearchUserViewModel {
     var dataFetchFailed : ((String)->())?
 }
 
+// MARK: - API calls
 extension GHSearchUserViewModel {
     func fetchUsrer() {
         userService.fetchUser(userId) {[weak self] (user, error) in

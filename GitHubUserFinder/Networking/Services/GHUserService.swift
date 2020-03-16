@@ -18,6 +18,7 @@ struct GHUserService {
     }
 }
 
+// MARK: - Fetch API method
 extension GHUserService {
     func fetchUser(_ userId: String, completion: @escaping UserFetchedBlock) {
         let urlString = APIConfig.searchUser(userName: userId).path
@@ -31,7 +32,6 @@ extension GHUserService {
         networkHandler.fetch(urlString:urlString, successHandler: successHandler, errorHandler: errorHandler)
         
     }
-    
     
     func fetchFollowers(_ userId: String, completion: @escaping FollowersFetchedBlock) {
         let urlString = APIConfig.followers(userName: userId).path

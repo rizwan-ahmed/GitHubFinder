@@ -12,24 +12,27 @@ import UIKit
 
 class GHFollowerCellViewModel {
     
+    // MARK: - Class Variables
     var userName        = ""
     var userEmail       = ""
-        
+    
     var userId :String  = ""
     var followerModel   : GHFollowerModel?
     var imageService    :GHImageService
     var imageFetch      : ((UIImage?)->())?
     var dataFetchFailed : ((String)->())?
     
+    // MARK: - Initializer
     private init(){
-         imageService  = GHImageService.init(NetworkHandler())
-     }
-     convenience init(_ follower: GHFollowerModel) {
-         self.init()
-         self.followerModel = follower
-     }
+        imageService  = GHImageService.init(NetworkHandler())
+    }
+    convenience init(_ follower: GHFollowerModel) {
+        self.init()
+        self.followerModel = follower
+    }
 }
 
+// MARK: - ViewModel Setup methods
 extension GHFollowerCellViewModel {
     
     func setUpUser() {

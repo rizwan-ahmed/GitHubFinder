@@ -10,12 +10,14 @@ import UIKit
 
 class GHFollowerTableViewCell: UITableViewCell {
     
+    // MARK: - Class Variables
     var viewModel : GHFollowerCellViewModel?
     @IBOutlet weak var indexLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    // MARK: - Cell methods
     override func prepareForReuse() {
         super.prepareForReuse()
         userImageView.image    = nil

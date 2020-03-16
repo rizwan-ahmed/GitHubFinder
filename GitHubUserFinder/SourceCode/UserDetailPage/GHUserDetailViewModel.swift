@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 class GHUserDetailViewModel {
-    
+    // MARK: - Class Variables
     var userName        = ""
     var userEmail       = ""
     var publicRepos   = ""
@@ -27,12 +27,13 @@ class GHUserDetailViewModel {
     var dataFetchFailed         : ((String)->())?
 }
 
+// MARK: - Class Methods
 extension GHUserDetailViewModel {
     func setUpUser() {
         userId = userModel?.login ?? ""
         userName        = "Name: \(userModel?.name ?? "")"
         userEmail       = "Email: \(userModel?.email ?? "")"
-        publicRepos   = "Public repos: \(userModel?.publicRepos ?? 0)"
+        publicRepos     = "Public repos: \(userModel?.publicRepos ?? 0)"
         fetchUsrerImge()
         if let followersCount = userModel?.followers, followersCount > 0 {
             fetchFollowers()
@@ -49,6 +50,7 @@ extension GHUserDetailViewModel {
     }
 }
 
+// MARK: -  API calls
 extension GHUserDetailViewModel {
     func fetchUsrerImge() {
         guard let iamgePath = userModel?.avatarURL else { return }

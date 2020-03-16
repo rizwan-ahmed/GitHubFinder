@@ -8,11 +8,12 @@
 
 import Foundation
 
-
+// MARK: - Segues
 enum Segues {
     static let homeToDetailPage = "homeToDetailPage"
 }
 
+// MARK: - CellIdentifiers
 enum CellIdentifiers {
     static let followerCellIdentifier = "FollowerCellIdentifier"
 }
